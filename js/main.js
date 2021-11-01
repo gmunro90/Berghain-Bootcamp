@@ -1,21 +1,33 @@
+/*
+
 function buildCardHTML(card){
   let prompt = card.question
-  const answers = card.answers.map((answer)=> {
-    return (  
-    `<ol>`+
-      `<li>${answer} </li>` +
-    `</ol>`
+
+  let answers = card.answers.map((answer) => {
+
+    return (
+    `<ol>` + `<li>${answer}</li>` +`</ol>`
     )
+  
   })
+ 
+  let QandA = `<div id="question">${*/ prompt /*}</div>` + answers;
 
-  let answersHTML = `<div id="game-board">${prompt}</div>`+
-  answers;
+  return QandA;
+}
+*/
 
-  return answersHTML
+function buildCardHTML(card){
+  let prompt = card.question
+
+  const htmlAnswer = card.answers.reduce(function (html, answer) {
+    html += '<li>' + answer + '</li>';
+    return html;
+  }, '');
+
+  return `<div id="question">${prompt}</div>` + htmlAnswer;
 }
 
-
-//<button id="quit">Give Up</button>
 
 // General function that will update the HTML content dynamically
 const buildDom = (html) => {
@@ -54,17 +66,14 @@ const buildDom = (html) => {
     const card = game.getRandomCard();
     const cardHTML = buildCardHTML(card)
     
-    buildDom (cardHTML)
+    buildDom (cardHTML) 
 
-    const endButton = document.getElementById("quit");
-   // endButton.addEventListener("click", buildGameOver);
 
     }
 
-  
   // Third Screen => Game Over
-  const buildGameOver = () => {
-    buildDom(`
+  function buildGameOver() {
+  buildDom(`
     <section class="game-over">
     <h1>Game Over</h1>
     <h3>Sorry, you'll have to settle for just a Döner tonight...</h3>
@@ -72,10 +81,10 @@ const buildDom = (html) => {
     <div class= "pointer"> </div>
     </section>
     `);
-  
-    const restartButton = document.querySelector("button");
-    restartButton.addEventListener("click", buildGameScreen);
-  };
+
+  const restartButton = document.querySelector("button");
+  restartButton.addEventListener("click", buildGameScreen);
+}
 
 const game = new Game();
 game.start();

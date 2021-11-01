@@ -24,7 +24,6 @@ getRandomCard(){ //eventually will return RANDOM q, not first index
 }
 
 
-
 myCards = [
   {
     question: "Where was Techno music first pioneered?",
@@ -32,8 +31,12 @@ myCards = [
      "Ibiza, Spain", "New York, USA", "London, UK", "Detroit, USA"
     ],
 
-    correctAnswer: ""
+    correctAnswer: "Detroit, USA"
   },
+
+
+
+  //below questions need updating to same format as above
   {
     question: "In which era was Techno music developed in?",
     answers: {
