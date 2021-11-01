@@ -20,7 +20,7 @@ start() {
 }
 
 getRandomCard(){ //eventually will return RANDOM q, not first index
-  return this.myCards[1]
+  return this.myCards[0]
 }
 
 

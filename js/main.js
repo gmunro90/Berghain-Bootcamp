@@ -1,14 +1,19 @@
 function buildCardHTML(card){
-let prompt = card.question
+  let prompt = card.question
+  const answers = card.answers.map((answer)=> {
+    return (  
+    `<ol>`+
+      `<li>${answer} </li>` +
+    `</ol>`
+    )
+  })
 
-let answersHTML = card.answers.reduce((html, acc)=> {
-`<div id="game-board">${prompt}</div>  
-<ol>`+
-`${answersHTML} + ''
-``</ol>`
-})
+  let answersHTML = `<div id="game-board">${prompt}</div>`+
+  answers;
 
+  return answersHTML
 }
+
 
 //<button id="quit">Give Up</button>
 
