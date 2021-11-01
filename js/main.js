@@ -1,21 +1,3 @@
-/*
-
-function buildCardHTML(card){
-  let prompt = card.question
-
-  let answers = card.answers.map((answer) => {
-
-    return (
-    `<ol>` + `<li>${answer}</li>` +`</ol>`
-    )
-  
-  })
- 
-  let QandA = `<div id="question">${*/ prompt /*}</div>` + answers;
-
-  return QandA;
-}
-*/
 
 function buildCardHTML(card){
   let prompt = card.question
