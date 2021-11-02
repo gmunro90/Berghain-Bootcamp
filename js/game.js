@@ -2,7 +2,6 @@
 class Game {
   constructor() {
     this.player = null;
-    this.questions = [];
     this.answers= [];
     this.gameIsOver = false;
     this.score = 0;
@@ -12,16 +11,10 @@ class Game {
 
   }
 
-
-start() {
-  // this.player = new Player('greg');
-
-}
-
-//this.myCards[Math.floor(Math.random()*this.myCards.length)] this returns random q but then needs already asked qs function to store
+// this returns random q but then needs already asked qs function to store
 
 getRandomCard(){ //eventually will return RANDOM q, not first index
-  return this.myCards[0]//currently taking 0 index of myCards array
+  return this.myCards[Math.floor(Math.random()*this.myCards.length)]//this.myCards[0]//currently taking 0 index of myCards array
 }
 
 getNextQuestionBtn (){
