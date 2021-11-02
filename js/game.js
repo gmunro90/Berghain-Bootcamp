@@ -30,7 +30,7 @@ myCards = [
      "Ibiza, Spain", "New York, USA", "London, UK", "Detroit, USA"
     ],
 
-    correctAnswer: "Detroit, USA"
+    correctAnswer: "Detroit, USA" // also can gove the index of the correct answer
   },
   {
     question: "In which era was Techno music developed in?",

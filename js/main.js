@@ -12,9 +12,9 @@ function buildCardHTML(card){
 
 
 // General function that will update the HTML content dynamically
-const buildDom = (html) => {
+const buildDom = (cardHTML) => {
     const main = document.querySelector("main");
-    main.innerHTML = html;
+    main.innerHTML = "<ol>" + cardHTML + "</ol>";
   };
   
   // First Screen => Splash Screen
@@ -24,7 +24,7 @@ const buildDom = (html) => {
     <img src="./images/1200px-Berghain-Logo.svg.png" alt="berghain-logo" style="width: 45%;"/>
 
     </br>
-    <button id="start-button">Start</button>
+    <button id="start-button">Start</button><br><br>
 
     <div class="rules">
     <div class="rules-title"><span>Rules</span></div>
@@ -51,10 +51,13 @@ const buildDom = (html) => {
     buildDom (cardHTML); 
 
 
-  /*const choices = document.querySelectorAll("li")
-  choices.addEventListener('click',function() {
-    console.log('hello') //this is where I am adding event listener to li selection.
-  })*/
+  let choices = document.querySelector("ol")
+  choices.addEventListener('click',function(event) {
+    let correct = false
+    console.log(event.target.innerText, card.correctAnswer)
+    console.log(event.target.innerText === card.correctAnswer)
+    if(event.target.innerText === card.correctAnswer) console.log("WINNER!")
+  })
   
    
     }
