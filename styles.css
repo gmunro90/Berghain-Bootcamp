@@ -1,6 +1,46 @@
+h1 {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+}
+
 body {
     background-image: url('images/berghain.jpeg') ;
     color: white;
 }
 
+.berglogo {
+    width: 400px;
+    display: flex;  
+    align-items: center;
+}
 
+#start-button{
+    
+    width: 400px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 480px;
+    font-size: 30px;
+    font-style: oblique;
+}
+
+
+
+.proven {
+    font-size: 26px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    
+    }
+
+.rules-title{
+    font-size: 30px;
+    
+}
+
+
+.rules-list {
+    
+}

@@ -22,20 +22,20 @@ const buildDom = (cardHTML) => {
   const buildSplashScreen = () => {
     buildDom(`
     <h1>Berghain Bootcamp</h1>
-    <img src="images/imageedit_13_8878481949.png" alt="berghain-logo" style="width: 40vw;"/><br>
-    </br>
+    <img src="images/imageedit_13_8878481949.png" class="berglogo" alt="berghain-logo">
+    
     <button id="start-button">Start</button><br><br>
+    <p class="proven">You must prove your knowledge of dance music and earn the right to enter Berghain!</p>
     <div class="rules">
     <div class="rules-title"><span>Rules</span></div>
     <div class="rules-list">
-    <p>You must prove knowledge of dance music and earn the right to enter Berghain!</p>
+    
         <ul>
             <li>You will have <span>10 seconds</span> to answer each question related to dance music</li>
             <li>You must answer all 6 questions correctly to enter Berghain</li>
             <li>You have 2 lives, use them all and you're not getting in</li>
         </ul>    
 </div>
-<audio id><source src="/audio/muffledqueue.mp3"></audio>	
 
     `);
     const startButton = document.getElementById("start-button");
