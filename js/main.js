@@ -7,13 +7,18 @@ function buildCardHTML(card){
     return html;
   }, '');
 
+  
+  /*let scoreboard = document.querySelector("main");
+  scoreboard.innerHTML = (`<div id="score">`+ `testTEXTtest` +`</div>`)*/
+
+ 
   return `${prompt}` + htmlAnswer;//why not have this in backtick string too?
 }
 
 
 // General function that will update the HTML content dynamically
 const buildDom = (cardHTML) => {
-    const main = document.querySelector("main");
+    let main = document.querySelector("main");
     main.innerHTML = "<ol>" + cardHTML + "</ol>";
   };
   
@@ -50,21 +55,26 @@ const buildDom = (cardHTML) => {
     
     buildDom (cardHTML); 
 
+  /*let scoreboard = main = document.querySelector('main')
+  main.innerText = (`<p>` + `score here` + `</p>`)*/
 
-  let choices = document.querySelector("ol")
-  choices.addEventListener('click',function(event) {
+    let choices = document.querySelector("ol")
+    choices.addEventListener('click',function(event) {
+  
     let correct = false
     console.log(event.target.innerText, card.correctAnswer)
     console.log(event.target.innerText === card.correctAnswer)
-    if(event.target.innerText === card.correctAnswer) //console.log ('CORRECT!')
-    buildDom(`
-    CORRECT<br><br>
-    <button id="next-button">NEXT QUESTION</button>  	
-    `);
+    if(event.target.innerText === card.correctAnswer) {//console.log ('CORRECT!')
+    main = document.querySelector('main')
+    main.innerHTML = (`CORRECT` + `<br><br><button id="next-button">`+ `NEXT QUESTION` + `</button>`)
+   } else {
+    main = document.querySelector('main')
+    main.innerHTML = (`INCORRECT` + `<br><br><button id="next-button">`+ `NEXT QUESTION` + `</button>`)
+   }
   })
-  
-   
-    }
+
+}
+
 
   // Third Screen => Game Over
   function buildGameOver() {
