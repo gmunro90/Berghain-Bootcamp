@@ -20,7 +20,7 @@ function buildCardHTML(card){
 const buildDom = (cardHTML) => {
     let main = document.querySelector("main");
     main.innerHTML = "<ol>" + cardHTML + "</ol>";
-  };
+};
   
   // First Screen => Splash Screen
   const buildSplashScreen = () => {
@@ -67,14 +67,20 @@ const buildDom = (cardHTML) => {
     if(event.target.innerText === card.correctAnswer) {//console.log ('CORRECT!')
     main = document.querySelector('main')
     main.innerHTML = (`CORRECT` + `<br><br><button id="next-button">`+ `NEXT QUESTION` + `</button>`)
+    
+    const nextBtn = document.getElementById('next-button')
+    const newQst = game.getNextQuestionBtn()
+    const htmlQst = buildCardHTML(newQst)
+    nextBtn.addEventListener('click', () => buildDom(htmlQst))
+
+
    } else {
     main = document.querySelector('main')
-    main.innerHTML = (`INCORRECT` + `<br><br><button id="next-button">`+ `NEXT QUESTION` + `</button>`)
+    main.innerHTML = (`INCORRECT<br><br><button id="next-button">TRY AGAIN</button>`)
    }
   })
 
 }
-
 
   // Third Screen => Game Over
   function buildGameOver() {

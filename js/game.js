@@ -22,10 +22,13 @@ getRandomCard(){ //eventually will return RANDOM q, not first index
   return this.myCards[0]//currently taking 0 index of myCards array
 }
 
-getNextQuestion (){
+getNextQuestionBtn (){
   return this.myCards[1]
 }
 
+/*tryQuestionAgain (){
+  return 
+}*/
 
 myCards = [
   {
