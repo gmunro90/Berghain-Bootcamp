@@ -26,8 +26,8 @@ getNextQuestionBtn (){
   return this.myCards[1]
 }
 
-/*tryQuestionAgain (){
-  return 
+/*takeALifeOff (){
+
 }*/
 
 myCards = [
@@ -94,6 +94,27 @@ myCards = [
       "ANSWERS 9"
     ],
     correctAnswer: "CORRECT ANSWER 9"
+  },
+  {
+    question: "QUESTION 10?",
+    answers: [
+      "ANSWERS 10"
+    ],
+    correctAnswer: "CORRECT ANSWER 10"
+  },
+  {
+    question: "QUESTION 11?",
+    answers: [
+      "ANSWERS 11"
+    ],
+    correctAnswer: "CORRECT ANSWER 11"
+  },
+  {
+    question: "QUESTION 12?",
+    answers: [
+      "ANSWERS 12"
+    ],
+    correctAnswer: "CORRECT ANSWER 12"
   }
 ]
 }

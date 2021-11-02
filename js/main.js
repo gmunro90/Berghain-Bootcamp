@@ -56,8 +56,9 @@ const buildDom = (cardHTML) => {
     buildDom (cardHTML); 
 
   /*let scoreboard = main = document.querySelector('main')
-  main.innerText = (`<p>` + `score here` + `</p>`)*/
-
+  main.innerText = (`<p>` + `score here` + `</p>`)*/   
+        
+      
     let choices = document.querySelector("ol")
     choices.addEventListener('click',function(event) {
   
@@ -67,7 +68,7 @@ const buildDom = (cardHTML) => {
     if(event.target.innerText === card.correctAnswer) {//console.log ('CORRECT!')
     main = document.querySelector('main')
     main.innerHTML = (`CORRECT` + `<br><br><button id="next-button">`+ `NEXT QUESTION` + `</button>`)
-    
+
     const nextBtn = document.getElementById('next-button')
     const newQst = game.getNextQuestionBtn()
     const htmlQst = buildCardHTML(newQst)
@@ -76,10 +77,15 @@ const buildDom = (cardHTML) => {
 
    } else {
     main = document.querySelector('main')
-    main.innerHTML = (`INCORRECT<br><br><button id="next-button">TRY AGAIN</button>`)
+    main.innerHTML = (`INCORRECT you lost a life!<br><br><button id="next-button">NEXT QUESTION</button>`)
+
+    const nextBtn = document.getElementById('next-button')
+    const newQst = game.getNextQuestionBtn()
+    const htmlQst = buildCardHTML(newQst)
+    nextBtn.addEventListener('click', () => buildDom(htmlQst))
+
    }
   })
-
 }
 
   // Third Screen => Game Over
