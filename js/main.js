@@ -1,4 +1,3 @@
-
 function buildCardHTML(card){
   let prompt = card.question
 
@@ -25,16 +24,16 @@ const buildDom = (cardHTML) => {
   // First Screen => Splash Screen
   const buildSplashScreen = () => {
     buildDom(`
-    <h1>In The Queue for Berghain</h1>
-    <img src="./images/1200px-Berghain-Logo.svg.png" alt="berghain-logo" style="width: 65vw;"/>
-
+    <center><h1>Berghain Bootcamp</h1>
+    <img src="./images/1200px-Berghain-Logo.svg.png" alt="berghain-logo" style="width: 45vw;"/>
     </br>
+    <h4>Put your techno knowledge to the test and get ready to enter the infamous Berghain!</h4>
     <button id="start-button">Start</button><br><br>
-
+    </center>
     <div class="rules">
     <div class="rules-title"><span>Rules</span></div>
     <div class="rules-list">
-    <p>You must prove knowledge of dance music and earn the right to enter Berghain!</p>
+   
         <ul>
             <li>You will have <span>10 seconds</span> to answer each question related to dance music</li>
             <li>You must answer all 6 questions correctly to enter Berghain</li>
@@ -63,9 +62,9 @@ const buildDom = (cardHTML) => {
     choices.addEventListener('click',function(event) {
   
     let correct = false
-    console.log(event.target.innerText, card.correctAnswer)
-    console.log(event.target.innerText === card.correctAnswer)
-    if(event.target.innerText === card.correctAnswer) {//console.log ('CORRECT!')
+    /*console.log(event.target.innerText, card.correctAnswer)
+    console.log(event.target.innerText === card.correctAnswer)*/
+    if(event.target.innerText === card.correctAnswer) {
     main = document.querySelector('main')
     main.innerHTML = (`CORRECT` + `<br><br><button id="next-button">`+ `NEXT QUESTION` + `</button>`)
 
@@ -73,6 +72,7 @@ const buildDom = (cardHTML) => {
     const newQst = game.getNextQuestionBtn()
     const htmlQst = buildCardHTML(newQst)
     nextBtn.addEventListener('click', () => buildDom(htmlQst))
+    
 
 
    } else {
@@ -80,7 +80,7 @@ const buildDom = (cardHTML) => {
     main.innerHTML = (`INCORRECT you lost a life!<br><br><button id="next-button">NEXT QUESTION</button>`)
 
     const nextBtn = document.getElementById('next-button')
-    const newQst = game.getNextQuestionBtn()
+    const newQst =  game.getNextQuestionBtn()
     const htmlQst = buildCardHTML(newQst)
     nextBtn.addEventListener('click', () => buildDom(htmlQst))
 

@@ -18,16 +18,17 @@ start() {
 
 }
 
+//this.myCards[Math.floor(Math.random()*this.myCards.length)] this returns random q but then needs already asked qs function to store
+
 getRandomCard(){ //eventually will return RANDOM q, not first index
   return this.myCards[0]//currently taking 0 index of myCards array
 }
 
 getNextQuestionBtn (){
-  return this.myCards[1]
-}
+  return this.myCards[1];
+}   
 
 /*takeALifeOff (){
-
 }*/
 
 myCards = [
