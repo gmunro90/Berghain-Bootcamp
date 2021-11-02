@@ -7,7 +7,7 @@ function buildCardHTML(card){
     return html;
   }, '');
 
-  return `<div id="question">${prompt}</div>` + htmlAnswer;
+  return `${prompt}` + htmlAnswer;//why not have this in backtick string too?
 }
 
 
@@ -46,11 +46,17 @@ const buildDom = (html) => {
 
   const buildGameScreen = () => {
     const card = game.getRandomCard();
-    const cardHTML = buildCardHTML(card)
+    const cardHTML = buildCardHTML(card);
     
-    buildDom (cardHTML) 
+    buildDom (cardHTML); 
 
 
+  /*const choices = document.querySelectorAll("li")
+  choices.addEventListener('click',function() {
+    console.log('hello') //this is where I am adding event listener to li selection.
+  })*/
+  
+   
     }
 
   // Third Screen => Game Over

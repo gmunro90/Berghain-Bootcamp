@@ -1,10 +1,9 @@
 "use strict"; //what is this?
 class Game {
   constructor() {
-    this.canvas = null;
-    this.ctx = null;
     this.player = null;
     this.questions = [];
+    this.answers= [];
     this.gameIsOver = false;
     this.score = 0;
     this.progressBar = 0;
@@ -20,7 +19,7 @@ start() {
 }
 
 getRandomCard(){ //eventually will return RANDOM q, not first index
-  return this.myCards[0]
+  return this.myCards[0]//currently taking 0 index of myCards array
 }
 
 
@@ -36,7 +35,7 @@ myCards = [
 
 
 
-  //below questions need updating to same format as above
+  //below questions need formatting as above
   {
     question: "In which era was Techno music developed in?",
     answers: {
