@@ -7,12 +7,8 @@ function buildCardHTML(card){
     return html;
   }, '');
 
-  
-  /*let scoreboard = document.querySelector("main");
-  scoreboard.innerHTML = (`<div id="score">`+ `testTEXTtest` +`</div>`)*/
-
- 
   return `${prompt}` + htmlAnswer;//why not have this in backtick string too?
+
 }
 
 
@@ -26,7 +22,7 @@ const buildDom = (cardHTML) => {
   const buildSplashScreen = () => {
     buildDom(`
     <h1>Berghain Bootcamp</h1>
-    <img src="./images/1200px-Berghain-Logo.svg.png" alt="berghain-logo" style="width: 40vw;"/><br>
+    <img src="images/imageedit_13_8878481949.png" alt="berghain-logo" style="width: 40vw;"/><br>
     </br>
     <button id="start-button">Start</button><br><br>
     <div class="rules">
@@ -38,13 +34,14 @@ const buildDom = (cardHTML) => {
             <li>You must answer all 6 questions correctly to enter Berghain</li>
             <li>You have 2 lives, use them all and you're not getting in</li>
         </ul>    
-</div>	
+</div>
+<audio id><source src="/audio/muffledqueue.mp3"></audio>	
+
     `);
     const startButton = document.getElementById("start-button");
     startButton.addEventListener("click", buildGameScreen);
   };
     
-
    // Second Screen => Game Screen
 
   const buildGameScreen = () => {
@@ -52,35 +49,35 @@ const buildDom = (cardHTML) => {
     const cardHTML = buildCardHTML(card);
     
     buildDom(cardHTML)
+     
 
-      
     let choices = document.querySelector("ol")
     choices.addEventListener('click',function(event) {
   
-    let correct = false
-    console.log(event.target.innerText, card.correctAnswer)
-    console.log(event.target.innerText === card.correctAnswer)
-
+    //let correct = false
     if(event.target.innerText === card.correctAnswer) {
     main = document.querySelector('main')
     main.innerHTML = (`CORRECT` + `<br><br><button id="next-button">`+ `NEXT QUESTION` + `</button>`)
     
     const nextBtn = document.getElementById('next-button')
-
     nextBtn.addEventListener('click', buildGameScreen)
 
+    /*const addPoint = document.getElementById('points-counter')
+    forEach (card.correctAnswer){
+      addPoint.innerText(+=1)
+    }*/
 
    } else {
     main = document.querySelector('main')
     main.innerHTML = (`INCORRECT you lost a life!<br><br><button id="next-button">NEXT QUESTION</button>`)
 
     const nextBtn = document.getElementById('next-button')
-  
     nextBtn.addEventListener('click', buildGameScreen)
+      }
+    })
+  }
 
-   }
-  })
-}
+
 
   // Third Screen => Game Over
   function buildGameOver() {
