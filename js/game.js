@@ -22,6 +22,18 @@ getRandomCard(){ //eventually will return RANDOM q, not first index
   return this.myCards[0]//currently taking 0 index of myCards array
 }
 
+/*nextQuestion (){
+  return this.myCards[1]
+}
+
+function setNextQuestion() {
+  reset()
+
+function reset() {
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+  }*/
+
 
 myCards = [
   {

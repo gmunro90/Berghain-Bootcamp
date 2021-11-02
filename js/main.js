@@ -21,7 +21,7 @@ const buildDom = (cardHTML) => {
   const buildSplashScreen = () => {
     buildDom(`
     <h1>In The Queue for Berghain</h1>
-    <img src="./images/1200px-Berghain-Logo.svg.png" alt="berghain-logo" style="width: 45%;"/>
+    <img src="./images/1200px-Berghain-Logo.svg.png" alt="berghain-logo" style="width: 65vw;"/>
 
     </br>
     <button id="start-button">Start</button><br><br>
@@ -56,7 +56,11 @@ const buildDom = (cardHTML) => {
     let correct = false
     console.log(event.target.innerText, card.correctAnswer)
     console.log(event.target.innerText === card.correctAnswer)
-    if(event.target.innerText === card.correctAnswer) console.log("WINNER!")
+    if(event.target.innerText === card.correctAnswer) //console.log ('CORRECT!')
+    buildDom(`
+    CORRECT<br><br>
+    <button id="next-button">NEXT QUESTION</button>  	
+    `);
   })
   
    

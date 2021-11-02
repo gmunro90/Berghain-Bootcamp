@@ -1,14 +1,9 @@
-const startButton = document.getElementById('start-btn')
-startButton.addEventListener('click', startGame)
+const nextButton = document.getElementById('next-button')
 
-function startGame (){
-console.log
-}
+let shuffledQuestions = shuffledQuestions = myCards.sort(() => Math.random());
+let currentQuestionIndex =  0;
 
-function setNextQuestion (){
-
-}
-
-function selectAnswer (){
-
-}
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    console.log(currentQuestionIndex)
+  })
