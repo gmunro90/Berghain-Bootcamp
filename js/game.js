@@ -69,46 +69,32 @@ myCards = [
     correctAnswer: "Dubfire, Maceo Plex, Marco Carola"
   },
   {
-    question: "QUESTION 7?",
+    question: "Who is often considered 'The Father of Techno'?",
     answers: [
-      "ANSWERS 7"
+      "Marco Santonastasi", "Enrique Iglesias", "Juan Atkins", "Derrick May"
     ],
-    correctAnswer: "CORRECT ANSWER 7"
+    correctAnswer: "Juan Atkins"
   },
   {
-    question: "QUESTION 8?",
+    question: "What is the most utilized instrument by original techno producers?",
     answers: [
-      "ANSWERS 8"
+      "TR-808", "SH-101", "TB-303", "NI-909"
     ],
-    correctAnswer: "CORRECT ANSWER 8"
+    correctAnswer: "TR-808"
   },
   {
-    question: "QUESTION 9?",
+    question: "In which country is Timewarp Festival held every April?",
     answers: [
-      "ANSWERS 9"
+      "Germany", "France", "Scotland", "Portugal"
     ],
-    correctAnswer: "CORRECT ANSWER 9"
+    correctAnswer: "Germany"
   },
   {
-    question: "QUESTION 10?",
+    question: "Which of these DJs is a regular resident at Berghain?",
     answers: [
-      "ANSWERS 10"
+      "David Guetta", "Ben Klock", "Locomia", "Oxia"
     ],
-    correctAnswer: "CORRECT ANSWER 10"
-  },
-  {
-    question: "QUESTION 11?",
-    answers: [
-      "ANSWERS 11"
-    ],
-    correctAnswer: "CORRECT ANSWER 11"
-  },
-  {
-    question: "QUESTION 12?",
-    answers: [
-      "ANSWERS 12"
-    ],
-    correctAnswer: "CORRECT ANSWER 12"
+    correctAnswer: "Ben Klock"
   }
 ]
 }

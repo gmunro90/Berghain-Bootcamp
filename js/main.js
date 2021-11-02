@@ -26,7 +26,7 @@ const buildDom = (cardHTML) => {
   const buildSplashScreen = () => {
     buildDom(`
     <h1>Berghain Bootcamp</h1>
-    <!--<img src="./images/berghain logo.jpeg" alt="berghain-logo" style="width: 65vw;"/>-->
+    <img src="./images/1200px-Berghain-Logo.svg.png" alt="berghain-logo" style="width: 40vw;"/><br>
     </br>
     <button id="start-button">Start</button><br><br>
     <div class="rules">
@@ -51,11 +51,8 @@ const buildDom = (cardHTML) => {
     const card = game.getRandomCard();
     const cardHTML = buildCardHTML(card);
     
-    buildDom(cardHTML); 
+    buildDom(cardHTML)
 
-  /*let scoreboard = main = document.querySelector('main')
-  main.innerText = (`<p>` + `score here` + `</p>`)*/   
-        
       
     let choices = document.querySelector("ol")
     choices.addEventListener('click',function(event) {
@@ -102,7 +99,6 @@ const buildDom = (cardHTML) => {
 
 const game = new Game();
 buildGameScreen();
-
 
 
   // When the window loads, then we will run the "buildSplashScreen" function
