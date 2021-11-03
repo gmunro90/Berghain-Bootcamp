@@ -6,13 +6,13 @@ h1 {
 
 body {
     background-image: url('images/berghain.jpeg') ;
-    color: white;
+    color:whitesmoke;
 }
 
 .berglogo {
-    width: 400px;
-    display: flex;  
-    align-items: center;
+    width: 300px;
+    padding-bottom: 50px;
+    margin-left: 525px;
 }
 
 #start-button{
@@ -22,7 +22,6 @@ body {
     border-radius: 10px;
     margin-left: 480px;
     font-size: 30px;
-    font-style: oblique;
 }
 
 

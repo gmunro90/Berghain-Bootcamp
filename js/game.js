@@ -2,7 +2,10 @@
 class Game {
   constructor() {
     this.gameIsOver = false;
-    this.score = 0;
+    this.score = 0; //if score.length === 6, WINNER - enter the club
+    this.incorrectAnswer = 0; //if incorrectanswer.length === 1, this.lives -1
+    this.totalIncorrect = 0; //if totalincorrect.length === 2, GAME OVER
+    this.lives = 2; 
     /*this.progressBar = 0;
     this.timer = 0;
     this.lives = 0;*/
