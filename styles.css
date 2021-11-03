@@ -1,3 +1,7 @@
+* {
+    font-family: 'Exo 2', sans-serif;
+}
+
 h1 {
     font-size: 60px;
     display: flex;
@@ -11,7 +15,7 @@ body {
 
 .berglogo {
     width: 300px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     margin-left: 525px;
 }
 
@@ -25,9 +29,8 @@ body {
 }
 
 
-
-.proven {
-    font-size: 26px;
+.prove {
+    font-size: 20px;
     font-weight: 900;
     display: flex;
     justify-content: center;
@@ -35,11 +38,12 @@ body {
     }
 
 .rules-title{
-    font-size: 30px;
-    
+    font-size: 20px;
+    padding-bottom: 20px;
+    padding-left: 25px;
 }
 
 
-.rules-list {
-    
+.rules-list li{
+    list-style-type: none;
 }

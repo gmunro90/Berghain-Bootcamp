@@ -22,11 +22,12 @@ const buildDom = (cardHTML) => {
   const buildSplashScreen = () => {
     buildDom(`
     <h1>Berghain Bootcamp</h1>
+    <h2 class="prove">Prove your techno music knowledge and earn the right to enter Berghain!</h2>
     <img src="images/imageedit_13_8878481949.png" class="berglogo" alt="berghain-logo">
     
     <button id="start-button">Start</button><br><br>
-    <p class="proven">You must prove your knowledge of dance music and earn the right to enter Berghain!</p>
-    <div class="rules">
+    
+    <div class="rules"><center>
     <div class="rules-title"><span>Rules</span></div>
     <div class="rules-list">
     
@@ -34,12 +35,13 @@ const buildDom = (cardHTML) => {
             <li>You will have <span>10 seconds</span> to answer each question related to dance music</li>
             <li>You must answer all 6 questions correctly to enter Berghain</li>
             <li>You have 2 lives, use them all and you're not getting in</li>
-        </ul>    
+        </ul>    </center>
 </div>
 
     `);
     const startButton = document.getElementById("start-button");
     startButton.addEventListener("click", buildGameScreen);
+    startButton.addEventListener("click", startTimer);
   };
     
    // Second Screen => Game Screen
@@ -54,7 +56,7 @@ const buildDom = (cardHTML) => {
     let choices = document.querySelector("ol")
     choices.addEventListener('click',function(event) {
   
-    //let correct = false
+    //let correct = false //IS THERE A WAY I CAN TURN THE BELOW INTO A FUNCTION THAT CAN THEN RETURN IF CORRECT ADD POINT IF INCORRECT TAKE LIFE?
     if(event.target.innerText === card.correctAnswer) {
     main = document.querySelector('main')
     main.innerHTML = (`CORRECT` + `<br><br><button id="next-button">`+ `NEXT QUESTION` + `</button>`)
@@ -96,6 +98,7 @@ const buildDom = (cardHTML) => {
 
 const game = new Game();
 buildGameScreen();
+countdown();
 
 
   // When the window loads, then we will run the "buildSplashScreen" function

@@ -6,10 +6,9 @@ class Game {
     this.incorrectAnswer = 0; //if incorrectanswer.length === 1, this.lives -1
     this.totalIncorrect = 0; //if totalincorrect.length === 2, GAME OVER
     this.lives = 2; 
+    this.isWinner = false;
     /*this.progressBar = 0;
-    this.timer = 0;
-    this.lives = 0;*/
-
+    this.timer = 0;*/
   }
 
 
@@ -17,17 +16,32 @@ getRandomCard(){ //eventually will return RANDOM q, not first index
   return this.myCards[Math.floor(Math.random()*this.myCards.length)]
 }
 
+//let currentQst = myCards[0];
+//let correctAnswer = currentQst.correctAnswer[getRandomCard(currentQst.correctAnswer)];
 
 
-myCards = [
+/*scoreCounter (){
+  //if 
+}
+
+checkIfFinished() {
+  if(this.score === 6) this.isWinner = true;
+  return this.isWinner
+}*/
+
+ 
+
+
+
+ myCards = [
   {
     question: "Where was Techno music first pioneered?",
     answers: [
      "Ibiza, Spain", "New York, USA", "London, UK", "Detroit, USA"
     ],
-
     correctAnswer: "Detroit, USA" // also can gove the index of the correct answer
   },
+
   {
     question: "In which era was Techno music developed in?",
     answers: [
