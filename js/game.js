@@ -39,12 +39,7 @@ class Game {
     this.lives -= 1;
   }
 
-  /*
-}
-checkIfFinished() {
-  if(this.score === 6) this.isWinner = true;
-  return this.isWinner
-}*/
+  
 
   myCards = [
     {

@@ -18,9 +18,26 @@ const buildDomGame = (cardHTML) => {
     <div class="score">
     <p>Score: ${game.score} </p></div>` +
     `<p>lives: ${game.lives}</p>` +
+    `<br><p>You have: <span id="timer">10</span> seconds remaining!</p>` +
     "<ol>" +
     cardHTML +
     "</ol>";
+
+  let count = 10;
+  let interval = setInterval(function () {
+    document.getElementById("timer").innerHTML = count;
+    count--;
+    if (count === -1) {
+      //this lets it hit 0 then action the clearInterval
+      clearInterval(interval);
+      document.getElementById("timer");
+      /*if (lifeCount > 0){ //want to get it to take a life if lives status is higher than 0 else, gameOver
+       takeLife();
+      } else {
+        buildGameOver()
+      }*/
+    }
+  }, 1000);
 };
 
 const buildDom = (HTML) => {

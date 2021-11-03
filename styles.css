@@ -58,7 +58,7 @@ li {
   background-color: silver;
 }
 
-li:hover {
+/li:hover {
   padding: 30px;
   cursor: pointer;
 }
