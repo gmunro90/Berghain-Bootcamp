@@ -1,5 +1,6 @@
 * {
     font-family: 'Exo 2', sans-serif;
+    margin: 0;
 }
 
 h1 {
@@ -51,21 +52,31 @@ body {
 
 ol {
     margin-top: 200px;
-    margin-left: 300px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 li {
     margin-top: 10px;
-    padding-top: 20px;
+    padding: 20px;
     list-style-type: none;
-    border: 3px solid #FFFFFF;
     border-radius: 10px;
-    background-color: rgb(216, 103, 250)  
+    background-color: silver 
     
 }
 
 li:hover{
-    padding: 10px;
+    padding: 30px;
 }
+
+.instruction {
+    color: red;
+}
+
+/*.splash-screen {
+    width: 100%;
+    height: 100%;
+    background-color: salmon;
+}
+*/
+
 

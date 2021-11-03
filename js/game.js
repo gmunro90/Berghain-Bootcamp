@@ -7,15 +7,29 @@ class Game {
     this.totalIncorrect = 0; //if totalincorrect.length === 2, GAME OVER
     this.lives = 2; 
     this.isWinner = false;
+    this.questions = [...this.myCards]
+    this.answeredQst = []
+    
     /*this.progressBar = 0;
     this.timer = 0;*/
   }
 
 
 getRandomCard(){ //eventually will return RANDOM q, not first index
-  return this.myCards[Math.floor(Math.random()*this.myCards.length)]
+  let currentQIndx = Math.floor(Math.random()*this.questions.length)
+  let currentQst = this.questions[currentQIndx];
+  this.answeredQst.push(currentQst)
+  this.questions.splice(currentQIndx, 1)
+
+  console.log('questtion', this.questions)
+  console.log('answered qst', this.answeredQst)
+  
+  return currentQst;
 }
 
+scoreUp(){
+  this.score +=1
+}
 //let currentQst = myCards[0];
 //let correctAnswer = currentQst.correctAnswer[getRandomCard(currentQst.correctAnswer)];
 

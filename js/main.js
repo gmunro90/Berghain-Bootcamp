@@ -12,30 +12,37 @@ function buildCardHTML(card){
 
 
 // General function that will update the HTML content dynamically
-const buildDom = (cardHTML) => {
+const buildDomGame = (cardHTML) => {
     let main = document.querySelector("main");
-    main.innerHTML = "<ol>" + cardHTML + "</ol>";
+    main.innerHTML = `<p>Score: ${game.score} </p>` +"<ol>" + cardHTML + "</ol>";
+};
+
+const buildDom = (HTML) => {
+  let main = document.querySelector("main");
+  main.innerHTML = HTML;
 };
   
   // First Screen => Splash Screen
   const buildSplashScreen = () => {
     buildDom(`
-    <h1>Berghain Bootcamp</h1>
-    <h2 class="prove">Prove your techno music knowledge and earn the right to enter Berghain!</h2>
-    <img src="images/imageedit_13_8878481949.png" class="berglogo" alt="berghain-logo">
-    
-    <button id="start-button">Start</button><br><br>
-    
-    <div class="rules"><center>
-    <div class="rules-title"><span>Rules</span></div>
-    <div class="rules-list">
-    
-        <ul>
-            <li>You will have <span>10 seconds</span> to answer each question related to dance music</li>
-            <li>You must answer all 6 questions correctly to enter Berghain</li>
-            <li>You have 2 lives, use them all and you're not getting in</li>
-        </ul>    </center>
-</div>
+    <div class="splash-screen">
+      <h1>Berghain Bootcamp</h1>
+      <h2 class="prove">Prove your techno music knowledge and earn the right to enter Berghain!</h2>
+      <img src="images/imageedit_13_8878481949.png" class="berglogo" alt="berghain-logo">
+      
+      <button id="start-button">Start</button><br><br>
+      
+      <div class="rules"><center>
+      <div class="rules-title"><span>Rules</span></div>
+      <div class="rules-list">
+      
+          <ul>
+              <li class="instruction">You will have <span>10 seconds</span> to answer each question related to dance music</li>
+              <li class="instruction">You must answer all 6 questions correctly to enter Berghain</li>
+              <li class="instruction">You have 2 lives, use them all and you're not getting in</li>
+          </ul>    </center>
+      </div>
+    </div>
     `);
     const startButton = document.getElementById("start-button");
     startButton.addEventListener("click", buildGameScreen);
@@ -47,7 +54,7 @@ const buildDom = (cardHTML) => {
     const card = game.getRandomCard();
     const cardHTML = buildCardHTML(card);
     
-    buildDom(cardHTML)
+    buildDomGame(cardHTML)
      
 
     let choices = document.querySelector("ol")
@@ -60,6 +67,9 @@ const buildDom = (cardHTML) => {
     
     const nextBtn = document.getElementById('next-button')
     nextBtn.addEventListener('click', buildGameScreen)
+    game.scoreUp()
+    //if abive === blah
+
 
     /*const addPoint = document.getElementById('points-counter')
     forEach (card.correctAnswer){
@@ -94,7 +104,6 @@ const buildDom = (cardHTML) => {
 }
 
 const game = new Game();
-buildGameScreen();
 
 
 
