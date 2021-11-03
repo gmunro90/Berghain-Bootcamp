@@ -1,8 +1,10 @@
+let game;
+
 function buildCardHTML(card) {
   let prompt = card.question;
 
   const htmlAnswer = card.answers.reduce(function (html, answer) {
-    html += "<li>" + answer + "</li>";
+    html += "<a class=answer>" + answer + "</a>";
     return html;
   }, "");
 
@@ -14,18 +16,18 @@ const buildDomGame = (cardHTML) => {
   //here you can affect the visuals and html of the game screen
   let main = document.querySelector("main");
   main.innerHTML =
-    `
-    <div class="score">
+    `<div class="score">
     <p>Score: ${game.score} </p></div>` +
     `<p>lives: ${game.lives}</p>` +
     `<br><p>You have: <span id="timer">10</span> seconds remaining!</p>` +
-    "<ol>" +
+    `<ol>` +
     cardHTML +
-    "</ol>";
+    `</ol>`;
 
+  //TIMER
   let count = 10;
   let interval = setInterval(function () {
-    document.getElementById("timer").innerHTML = count;
+    document.getElementById("timer").innerHTML = `${count}`;
     count--;
     if (count === -1) {
       //this lets it hit 0 then action the clearInterval
@@ -53,17 +55,17 @@ const buildSplashScreen = () => {
       <h2 class="prove">Prove your techno music knowledge and earn the right to enter Berghain!</h2>
       <img src="images/imageedit_13_8878481949.png" class="berglogo" alt="berghain-logo">
       
-      <button id="start-button">Start</button><br><br>
+      <button id="start-button">Start</button>
       
-      <div class="rules"><center>
-      <div class="rules-title"><span>Rules</span></div>
+      <div class="rules">
+      <h2 class="rules-title">Rules</h2><br>
       <div class="rules-list">
       
           <ul>
               <li class="instruction">You will have <span>10 seconds</span> to answer each question related to dance music</li>
               <li class="instruction">You must answer all 6 questions correctly to enter Berghain</li>
               <li class="instruction">You have 2 lives, use them all and you're not getting in</li>
-          </ul>    </center>
+          </ul>
       </div>
     </div>
     `);
@@ -76,7 +78,8 @@ const buildSplashScreen = () => {
 
 const buildGameScreen = () => {
   //logic of the game screen + affect html dependant on actions
-  //const newScore = resetScoreUp();
+  game = new Game();
+
   const card = game.getRandomCard();
   const cardHTML = buildCardHTML(card);
 
@@ -97,7 +100,8 @@ const buildGameScreen = () => {
       nextBtn.addEventListener("click", buildGameScreen);
       game.scoreUp(); //adding points
       //if above === reaches 6, build WINNER html
-      if (game.score === 1) {
+      if (game.score === 2) {
+        // CORRECT ANSWER LOGIC
         //console.log('youWIN')
         main = document.querySelector("main");
         main.innerHTML =
@@ -106,6 +110,7 @@ const buildGameScreen = () => {
         playAgainBtn.addEventListener("click", buildGameScreen);
       }
     } else {
+      //INCORRECT ANSWER LOGIC
       main = document.querySelector("main");
       main.innerHTML = `INCORRECT...you lost a life!<br><br><button id="next-button">NEXT QUESTION</button>`;
 
@@ -136,9 +141,11 @@ function buildGameOver() {
 
   const playAgainBtn = document.getElementById("otravez");
   playAgainBtn.addEventListener("click", buildGameScreen);
+
+  /*game = null;*/
 }
 
-const game = new Game();
+game = new Game();
 
 // When the window loads, then we will run the "buildSplashScreen" function
 // "load" waits for the html and JS

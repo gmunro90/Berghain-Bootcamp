@@ -9,9 +9,7 @@ class Game {
     this.isWinner = false;
     this.questions = [...this.myCards];
     this.answeredQst = [];
-
-    /*this.progressBar = 0;
-    this.timer = 0;*/
+    /*this.progressBar = 0;*/
   }
 
   getRandomCard() {
@@ -31,15 +29,13 @@ class Game {
     this.score += 1;
   }
 
-  /*resetScore(){ 
+  resetScore(){ 
   this.score = 0
-}*/
+  }
 
   takeLife() {
     this.lives -= 1;
   }
-
-  
 
   myCards = [
     {
