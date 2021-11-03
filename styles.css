@@ -11,6 +11,7 @@
 }
 
 h1 {
+  margin-top: 10px;
   font-size: 60px;
 }
 
@@ -26,21 +27,18 @@ body {
 
 .berglogo {
   width: 300px;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
 
 #start-button {
   width: 300px;
   height: 60px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 40px;
   border-radius: 10px;
   font-size: 30px;
   color: rgb(110, 124, 167);
-}
-
-.rules-title {
 }
 
 .rules-list {
