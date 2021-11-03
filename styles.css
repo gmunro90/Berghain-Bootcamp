@@ -3,17 +3,20 @@
   margin: 0;
 }
 
-h1 {
-  font-size: 60px;
+.splash-screen {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 60px;
 }
 
 .prove {
   font-size: 20px;
   font-weight: 900;
-  display: flex;
-  justify-content: center;
 }
 
 body {
@@ -23,15 +26,11 @@ body {
 
 .berglogo {
   width: 300px;
-  padding-bottom: 10px;
-  margin-left: 525px;
-  display: flex;
-  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 #start-button {
-  display: flex;
-  justify-content: center;
   width: 300px;
   height: 60px;
   margin-top: 50px;
@@ -42,19 +41,12 @@ body {
 }
 
 .rules-title {
-  display: flex;
-  justify-content: center;
 }
 
-.rules {
-  display: flex;
-  justify-content: center;
-}
-
-.rules-list ul {
+.rules-list {
   list-style-type: none;
   width: 500px;
-  margin-top: 80px;
+  margin-bottom: 40px;
   padding: 15px;
   list-style-type: none;
   border: black;
