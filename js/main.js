@@ -39,7 +39,6 @@ const buildDom = (cardHTML) => {
     `);
     const startButton = document.getElementById("start-button");
     startButton.addEventListener("click", buildGameScreen);
-    startButton.addEventListener("click", startTimer);
   };
     
    // Second Screen => Game Screen
