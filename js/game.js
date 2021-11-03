@@ -23,14 +23,10 @@ getRandomCard(){ //eventually will return RANDOM q, not first index
 /*scoreCounter (){
   //if 
 }
-
 checkIfFinished() {
   if(this.score === 6) this.isWinner = true;
   return this.isWinner
 }*/
-
- 
-
 
 
  myCards = [

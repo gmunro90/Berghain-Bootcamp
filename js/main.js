@@ -1,4 +1,3 @@
-
 function buildCardHTML(card){
   let prompt = card.question
 
@@ -37,7 +36,6 @@ const buildDom = (cardHTML) => {
             <li>You have 2 lives, use them all and you're not getting in</li>
         </ul>    </center>
 </div>
-
     `);
     const startButton = document.getElementById("start-button");
     startButton.addEventListener("click", buildGameScreen);
@@ -98,7 +96,7 @@ const buildDom = (cardHTML) => {
 
 const game = new Game();
 buildGameScreen();
-countdown();
+
 
 
   // When the window loads, then we will run the "buildSplashScreen" function
