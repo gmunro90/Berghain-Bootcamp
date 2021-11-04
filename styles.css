@@ -20,6 +20,7 @@ audio {
 }
 
 .prove {
+  margin-top: 12px;
   font-size: 20px;
   font-weight: 900;
 }
@@ -31,9 +32,16 @@ body {
 }
 
 .berglogo {
-  width: 300px;
-  margin-top: 40px;
+  width: 320px;
+  margin-top: 20px;
   margin-bottom: 10px;
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 50%;
+  }
 }
 
 #start-button {
@@ -55,6 +63,15 @@ body {
   border: black;
   border-radius: 5px;
   background-color: silver;
+}
+
+.score-lives {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: center;
+  margin-right: 20px;
 }
 
 a {
@@ -81,8 +98,8 @@ a.answer {
   font-size: 22px;
 }
 
-answer:hover {
-  padding: 30px;
+a:hover {
+  margin-left: 20px;
   cursor: pointer;
 }
 
@@ -97,12 +114,12 @@ answer:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 348px;
+  margin-top: 200px;
 }
 
 .correct-text {
   font-size: 150px;
-  color: #46A312;
+  color: #46a312;
 }
 
 #next-button {
@@ -118,12 +135,12 @@ answer:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 348px;
+  margin-top: 300px;
 }
 
 .incorrect-text {
   font-size: 70px;
-  color: #C1201D;
+  color: #c1201d;
 }
 
 .instruction span {
@@ -149,7 +166,7 @@ ol {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 80px;
 }
 
 .welcome-text {
@@ -161,7 +178,7 @@ ol {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 35px;
 }
 
 .game-over-text {

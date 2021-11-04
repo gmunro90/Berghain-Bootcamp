@@ -54,14 +54,14 @@ function buildCardHTML(card) {
 }
 
 //Builds scores, lives + timer when game screen loaded
-const buildDomGame = (cardHTML) => {
+const buildDomGame = (cardHTML) => {//text for timer if it worked <p class="timer">You have: ${10} seconds remaining!</p>
   //here you can affect the visuals and html of the game screen
   let main = document.querySelector("main");
   main.innerHTML =
-    `<div class="score">
+    `<div class="score-lives">
     <p>Score: ${game.score} / 6 </p>
-    <p>lives: ${game.lives}</p></div>
-    <p class="timer">You have: ${10} seconds remaining!</p>
+    <p class ="lives-text">Lives: ${game.lives}</p></div>
+    
     <ol>` +
     cardHTML +
     `</ol>` +
