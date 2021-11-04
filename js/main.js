@@ -69,9 +69,8 @@ const buildDomGame = (cardHTML) => {//text for timer if it worked <p class="time
     <source src="audio/muffledqueue.mp3" type="audio/mpeg">
     </audio>`;
 
-  //TIMER
-
-  let interval = setInterval(function () {
+  /*TIMER
+let interval = setInterval(function () {
     document.getElementsByClassName("timer").innerHTML = game.count;
     game.count--;
   }, 1000);
@@ -97,7 +96,7 @@ const buildDomGame = (cardHTML) => {//text for timer if it worked <p class="time
         buildGameOver();
       }
     }
-  }
+  }*/
 };
 
 //RELOADS THE PAGE WHEN PLAY AGAIN BUTTON IS CLICKED
@@ -156,7 +155,7 @@ const buildGameScreen = () => {
       <source src="audio/incorrect.mp3" type="audio/mpeg">
     </audio>
     <div class="incorrect-section">
-    <div class="incorrect-text">INCORRECT...you lost a life!</div><button id="next-button">NEXT QUESTION</button></div>`;
+    <div class="incorrect-text"> INCORRECT<br><br>you lost a life!</div><button id="next-button">NEXT QUESTION</button></div>`;
 
       const nextBtn = document.getElementById("next-button");
       nextBtn.addEventListener("click", buildGameScreen);
