@@ -49,7 +49,7 @@ class Game {
     },
     {
       question:
-        "In which location was the now closed, world-famous nightclub Space?",
+        "In which location was the now closed, world-famous nightclub 'Space'?",
       answers: ["Miami", "Ibiza", "Mallorca", "Manchester"],
       correctAnswer: "Ibiza",
     },

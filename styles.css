@@ -44,6 +44,12 @@ body {
   }
 }
 
+.splash-screen {
+  width: 100%;
+  height: 100%;
+  /*background-image: url(/video/splashscreenbkgrnd.mov)*/
+}
+
 #start-button {
   width: 300px;
   height: 60px;
@@ -66,26 +72,27 @@ body {
 }
 
 .score-lives {
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
   align-content: center;
   margin-right: 20px;
+  margin-top: 10px;
 }
 
-a {
+/*a {
   width: 10px;
   font-size: 25px;
-  border-radius: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
+*/
 .answer {
   width: 400px;
-  margin-top: 20px;
+  margin-top: 30px;
   padding: 30px;
   list-style-type: none;
   border-radius: 50px;
@@ -144,22 +151,13 @@ a:hover {
   text-align: center;
 }
 
-.instruction span {
-  color: rgb(110, 124, 167);
-}
-
-.splash-screen {
-  width: 100%;
-  height: 100%;
-  /*background-image: url(/video/splashscreenbkgrnd.mov)*/
-}
 
 ol {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 143px;
+  margin-top: 80px;
 }
 
 .winning-screen {

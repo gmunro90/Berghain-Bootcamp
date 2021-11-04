@@ -23,8 +23,8 @@ const buildSplashScreen = () => {
   <div class="rules-list">
   
       <ul>
-          <li class="instruction">You will have <span>10 seconds</span> to answer each question, related to dance music</li>
-          <li class="instruction">You must answer 6 questions correctly to enter Berghain</li>
+          <li class="instruction">You will have multiple-choice answers to answer each question, related to dance music</li>
+          <li class="instruction">You must answer <span id="six-questions">6 questions</span> correctly to enter Berghain</li>
           <li class="instruction">You have 2 lives, use them all and you're not getting in</li>
       </ul>
   </div>
@@ -54,7 +54,8 @@ function buildCardHTML(card) {
 }
 
 //Builds scores, lives + timer when game screen loaded
-const buildDomGame = (cardHTML) => {//text for timer if it worked <p class="timer">You have: ${10} seconds remaining!</p>
+const buildDomGame = (cardHTML) => {
+  //text for timer if it worked <p class="timer">You have: ${10} seconds remaining!</p>
   //here you can affect the visuals and html of the game screen
   let main = document.querySelector("main");
   main.innerHTML =
@@ -102,7 +103,6 @@ let interval = setInterval(function () {
 //RELOADS THE PAGE WHEN PLAY AGAIN BUTTON IS CLICKED
 const restart = () => {
   document.location.href = "";
-  game;
 };
 
 // Second Screen => Game Screen
