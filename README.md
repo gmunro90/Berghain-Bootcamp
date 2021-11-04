@@ -12,9 +12,9 @@ I have rendered a game in the browser with logic for winning/losing. Seperate HT
 
 ## Backlog
 
--Include functioning timer, timer is workign but when new question generates, countdown acts irratically. Otherwise, logic is functioning to arrive at 0 and take a life off.
+- Include functioning timer, timer is workign but when new question generates, countdown acts irratically. Otherwise, logic is functioning to arrive at 0 and take a life off.
 
--Styling with reactive answers, like 'Who Wants To Be A Millionaire', when you select an answer it flashes red/green dependant on correct/incorrect value.
+- Styling with reactive answers, like 'Who Wants To Be A Millionaire', when you select an answer it flashes red/green dependant on correct/incorrect value.
 
 ## Data structure
 
@@ -34,11 +34,9 @@ My methods are quite simple, since the game structure is not too demanding. I ha
 
 ### Git
 
-URls for the project repo and deploy
 [Link Repo](https://github.com/gmunro90/project1)
 [Link Deploy](https://gmunro90.github.io/project1/)
 
 ### Slides
 
-URls for the project presentation (slides)
 [Link Slides.com](https://tinyurl.com/tfvwp4c8)
