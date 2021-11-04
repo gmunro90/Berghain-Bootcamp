@@ -132,9 +132,12 @@ const buildGameScreen = () => {
       //INCORRECT ANSWER LOGIC
       main = document.querySelector("main");
       main.innerHTML = `
+      
       <audio  <audio controls autoplay>
       <source src="audio/incorrect.mp3" type="audio/mpeg">
-    </audio>INCORRECT...you lost a life!<button id="next-button">NEXT QUESTION</button>`;
+    </audio>
+    <div class="incorrect-section">
+    <div class="incorrect-text">INCORRECT...you lost a life!</div><button id="next-button">NEXT QUESTION</button></div>`;
 
       const nextBtn = document.getElementById("next-button");
       nextBtn.addEventListener("click", buildGameScreen);

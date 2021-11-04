@@ -3,7 +3,6 @@
   margin: 0;
 }
 
-
 .splash-screen {
   display: flex;
   justify-content: center;
@@ -87,18 +86,44 @@ a.answer {
   cursor: pointer;
 }
 
-.score  {
+.score {
   display: flex;
   flex-direction: column;
   justify-content: right;
 }
 
-.correct-section{
+.correct-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 348px;
+}
+
+.correct-text{
+  font-size: 150px;
+  color: green
+}
+
+#next-button{
+  width: 200px;
+  height: 100px;
+  border-radius: 40px;
+  font-size: 21px;
+  margin-top: 15px;
+}
+
+.incorrect-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 348px;
+}
+
+.incorrect-text{
+  font-size: 70px;
+  color: red
 }
 
 .instruction span {
@@ -120,12 +145,11 @@ ol {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   margin-top: 143px;
 }
 
-
-.winning-screen{
+.winning-screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
