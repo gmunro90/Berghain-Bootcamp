@@ -1,5 +1,3 @@
-let game; //initiates game
-
 //builds general DOM to be updated dynamically
 const buildDom = (HTML) => {
   let main = document.querySelector("main");
@@ -42,10 +40,9 @@ const buildSplashScreen = () => {
     
 `);
 
-//START BUTTON
-const startButton = document.getElementById("start-button");
-startButton.addEventListener("click", buildGameScreen);
-
+  //START BUTTON
+  const startButton = document.getElementById("start-button");
+  startButton.addEventListener("click", buildGameScreen);
 };
 
 //BRINGS NEW QUESTIONS + ANSWERS
@@ -91,38 +88,35 @@ const buildDomGame = (cardHTML) => {
   }, 1000);*/
 };
 
-
-
 // Second Screen => Game Screen
 const buildGameScreen = () => {
   //logic of the game screen + affect html dependant on actions
-  game = new Game();//brings the game class and builds the elements needed
+  //brings the game class and builds the elements needed
 
   const card = game.getRandomCard(); //gets a question from shuffled deck
   const cardHTML = buildCardHTML(card); //builds the html of the questions
 
   buildDomGame(cardHTML);
 
-  let choices = document.querySelector("ol");//logic of choices, correct or incorrect...
+  let choices = document.querySelector("ol"); //logic of choices, correct or incorrect...
   choices.addEventListener("click", function (event) {
     //let correct = false
-    if (event.target.innerText === card.correctAnswer) {  
-        // CORRECT ANSWER LOGIC
+    if (event.target.innerText === card.correctAnswer) {
+      // CORRECT ANSWER LOGIC
       main = document.querySelector("main");
-      main.innerHTML =`
+      main.innerHTML = `
       <audio  <audio controls autoplay>
       <source src="audio/correct.mp3" type="audio/mpeg">
-    </audio>CORRECT!<button id="next-button">NEXT QUESTION</button>`
+    </audio>CORRECT!<button id="next-button">NEXT QUESTION</button>`;
 
       const nextBtn = document.getElementById("next-button");
       nextBtn.addEventListener("click", buildGameScreen);
-      game.scoreUp();//adding points
+      game.scoreUp(); //adding points
 
       //if above === reaches 6, build WINNER html
       if (game.score === 6) {
-
         main = document.querySelector("main");
-        main.innerHTML =`
+        main.innerHTML = `
         <img src="images/bcee3f84ac741cf2c35b60a5e4dfbf43.jpg" alt="berghain-logo">
         WINNER<br><button id="otravez">PLAY AGAIN?</button>`;
         const playAgainBtn = document.getElementById("otravez");
@@ -167,7 +161,7 @@ function buildGameOver() {
   /*game = null;*/
 }
 
-game = new Game();
+const game = new Game();
 
 // When the window loads, then we will run the "buildSplashScreen" function
 // "load" waits for the html and JS
