@@ -87,6 +87,20 @@ a.answer {
   cursor: pointer;
 }
 
+.score  {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.correct-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 348px;
+}
+
 .instruction span {
   color: rgb(110, 124, 167);
 }

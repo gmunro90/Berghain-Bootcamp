@@ -59,8 +59,8 @@ const buildDomGame = (cardHTML) => {
   let main = document.querySelector("main");
   main.innerHTML =
     `<div class="score">
-    <p>Score: ${game.score} / 6 </p></div>` +
-    `<p>lives: ${game.lives}</p>` +
+    <p>Score: ${game.score} / 6 </p>
+    <p>lives: ${game.lives}</p></div>` +
     `<br><p>You have: <span id="timer">10</span> seconds remaining!</p>` +
     `<ol>` +
     cardHTML +
@@ -106,7 +106,10 @@ const buildGameScreen = () => {
       main.innerHTML = `
       <audio  <audio controls autoplay>
       <source src="audio/correct.mp3" type="audio/mpeg">
-    </audio>CORRECT!<button id="next-button">NEXT QUESTION</button>`;
+      </audio>
+      <div class="correct-section">
+      <h2 class="correct-text">CORRECT!</h2><br><br><button id="next-button">NEXT QUESTION</button>
+      </div>`;
 
       const nextBtn = document.getElementById("next-button");
       nextBtn.addEventListener("click", buildGameScreen);
