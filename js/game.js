@@ -1,14 +1,12 @@
 "use strict"; //what is this?
 class Game {
   constructor() {
-    this.gameIsOver = false;
     this.score = 0; 
     this.lives = 2;
     this.questions = [...this.myCards];
     this.answeredQst = [];
     this.count = 0;
-  }
-
+  };
 
   getRandomCard() {
     //eventually will return RANDOM q, not first index
@@ -21,19 +19,15 @@ class Game {
     console.log("answered qst", this.answeredQst);
 
     return currentQst;
-  }
+  };
 
   scoreUp() {
     this.score += 1;
-  }
+  };
 
   takeLife() {
     this.lives -= 1;
-  }
-
- 
-
- 
+  };
 
   myCards = [
     {
@@ -100,4 +94,4 @@ class Game {
       correctAnswer: "Ben Klock",
     },
   ];
-}
+};

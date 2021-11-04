@@ -1,47 +1,44 @@
-# In The Queue for Berghain
-
+# Berghain Bootcamp
 
 ## Description
-Brief description of the project
 
+This is a browser based quiz game that requires the user to answer 6 correct questions relating to techno music and dance culture. The questions are randomised, and the user has 2 lives. If all lives are used up by answering questions incorrectly, it's game over.
+
+The game is based on entering the infamous Berlin nightclub 'Berghain' which is notoriously difficult to get in, as the security on the door ask clients questions relating to the event inside, in order to filter their clientele.
 
 ## MVP (DOM - CANVAS)
-MVP definition, deliverables.
 
+I have rendered a game in the browser with logic for winning/losing. Seperate HTML/CSS/JS is included with plain JS used for DOM manipulation.
 
 ## Backlog
 
+-Include functioning timer, timer is workign but when new question generates, countdown acts irratically. Otherwise, logic is functioning to arrive at 0 and take a life off.
+
+-Styling with reactive answers, like 'Who Wants To Be A Millionaire', when you select an answer it flashes red/green dependant on correct/incorrect value.
 
 ## Data structure
-Classes and methods definition.
 
+I have 1 game class controlling the varying properties of the game that need to be dynamically updated dependant on user action.
 
-## States y States Transitions
-Definition of the different states and their transition (transition functions)
+My methods are quite simple, since the game structure is not too demanding. I have a random question generator, that pushes already asked questions to a new array, whilst shuffling through the remaining array's index to generate a new question each round.
 
-- splashScreen
-- gameScreen
-- gameoverScreen
-- winScreen
+## States and States Transitions
 
+- splashScreen is generated on window load. Builds inner HTML with a start button, background image and logo, and rules of the game. On click the start button generates a buildGameScreen function.
 
-## Task
-Task definition in order of priority
+- gameScreen is generated via the buildDomGame function which generates a new 'card' html which is where the questions and 4 possible answers is initiated and presented to the user. The buildGameScreen function is initiated alongside this in order to bring the game logic, generating a random question and loading the correct/incorrect interaction and results dependant on user action.
 
+- gameoverScreen is generated once the user's lives = 0. It is a basic game over screen that plays a sad crowd noise and displays a little 'Berlin' joke to the user.
 
-## Links
-
-
-### Trello
-[Link url](https://trello.com)
-
+- winScreen generates when the player reaches 6 correctly answered questions (without their lives reaching 0). This screen generates audio (actual audio from inside Berghain) to let the user know they have successfully gained access and it's time to party!
 
 ### Git
-URls for the project repo and deploy
-[Link Repo](http://github.com)
-[Link Deploy](http://github.com)
 
+URls for the project repo and deploy
+[Link Repo](https://github.com/gmunro90/project1)
+[Link Deploy](https://gmunro90.github.io/project1/)
 
 ### Slides
+
 URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+[Link Slides.com](https://tinyurl.com/tfvwp4c8)
