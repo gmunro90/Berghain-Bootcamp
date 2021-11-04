@@ -2,15 +2,13 @@
 class Game {
   constructor() {
     this.gameIsOver = false;
-    this.score = 0; //if score.length === 6, WINNER - enter the club
-    this.incorrectAnswer = 0; //if incorrectanswer.length === 1, this.lives -1
-    this.totalIncorrect = 0; //if totalincorrect.length === 2, GAME OVER
+    this.score = 0; 
     this.lives = 2;
-    this.isWinner = false;
     this.questions = [...this.myCards];
     this.answeredQst = [];
-    /*this.progressBar = 0;*/
+    this.count = 0;
   }
+
 
   getRandomCard() {
     //eventually will return RANDOM q, not first index
@@ -29,13 +27,13 @@ class Game {
     this.score += 1;
   }
 
-  resetScore(){ 
-  this.score = 0
-  }
-
   takeLife() {
     this.lives -= 1;
   }
+
+ 
+
+ 
 
   myCards = [
     {

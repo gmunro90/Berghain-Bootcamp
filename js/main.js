@@ -60,9 +60,9 @@ const buildDomGame = (cardHTML) => {
   main.innerHTML =
     `<div class="score">
     <p>Score: ${game.score} / 6 </p>
-    <p>lives: ${game.lives}</p></div>` +
-    `<br><p>You have: <span id="timer">10</span> seconds remaining!</p>` +
-    `<ol>` +
+    <p>lives: ${game.lives}</p></div>
+    <p class="timer">You have: ${10} seconds remaining!</p>
+    <ol>` +
     cardHTML +
     `</ol>` +
     `<audio controls autoplay loop>
@@ -70,33 +70,40 @@ const buildDomGame = (cardHTML) => {
     </audio>`;
 
   //TIMER
-  let count = 10;
+
   let interval = setInterval(function () {
-    document.getElementById("timer").innerHTML = `${count}`;
-    count--;
-    if (count === -1) {
-      //this lets it hit 0 then action the clearInterval
-      clearInterval(interval);
-      {
-        //INCORRECT ANSWER LOGIC
-        main = document.querySelector("main");
-        main.innerHTML = `
+    document.getElementsByClassName("timer").innerHTML = game.count;
+    game.count--;
+  }, 1000);
+
+  if (game.count === -1) {
+    //this lets it hit 0 then action the clearInterval
+    clearInterval(interval);
+    {
+      //OUT OF TIME, TAKE A LIFE LOGIC
+      main = document.querySelector("main");
+      main.innerHTML = `
         
         <audio  <audio controls autoplay>
         <source src="audio/incorrect.mp3" type="audio/mpeg">
       </audio>
       <div class="incorrect-section">
-      <div class="incorrect-text">OUT OF TIME...you lost a life!</div><button id="next-button">NEXT QUESTION</button></div>`;
+      <div class="incorrect-text">OUT OF TIME...<br>you lost a life!</div><button id="next-button">NEXT QUESTION</button></div>`;
 
-        const nextBtn = document.getElementById("next-button");
-        nextBtn.addEventListener("click", buildGameScreen);
-        game.takeLife();
-        if (game.lives === 0) {
-          buildGameOver();
-        }
+      const nextBtn = document.getElementById("next-button");
+      nextBtn.addEventListener("click", buildGameScreen);
+      game.takeLife();
+      if (game.lives === 0) {
+        buildGameOver();
       }
     }
-  }, 1000);
+  }
+};
+
+//RELOADS THE PAGE WHEN PLAY AGAIN BUTTON IS CLICKED
+const restart = () => {
+  document.location.href = "";
+  game;
 };
 
 // Second Screen => Game Screen
@@ -138,7 +145,7 @@ const buildGameScreen = () => {
         <audio  <audio controls autoplay>
         <source src="audio/Winner.mp3" type="audio/mpeg">`;
         const playAgainBtn = document.getElementById("otravez");
-        playAgainBtn.addEventListener("click", buildGameScreen);
+        playAgainBtn.addEventListener("click", restart); //buildGameScreen);
       }
     } else {
       //INCORRECT ANSWER LOGIC
@@ -181,7 +188,8 @@ function buildGameOver() {
     `);
 
   const playAgainBtn = document.getElementById("otravez");
-  playAgainBtn.addEventListener("click", buildGameScreen);
+  playAgainBtn.addEventListener("click", restart);
+  play;
 
   /*game = null;*/
 }

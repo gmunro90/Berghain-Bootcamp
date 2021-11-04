@@ -102,7 +102,7 @@ answer:hover {
 
 .correct-text {
   font-size: 150px;
-  color: green;
+  color: #46A312;
 }
 
 #next-button {
@@ -123,7 +123,7 @@ answer:hover {
 
 .incorrect-text {
   font-size: 70px;
-  color: red;
+  color: #C1201D;
 }
 
 .instruction span {
