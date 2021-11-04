@@ -23,9 +23,9 @@ const buildSplashScreen = () => {
   <div class="rules-list">
   
       <ul>
-          <li class="instruction">You will have <span>10 seconds</span> to answer each question related to dance music</li>
-          <li class="instruction">You must answer 6 questionscorrectly to enter Berghain</li>
-          <li class="instruction">You have <span>2 lives</span>, use them all and you're not getting in</li>
+          <li class="instruction">You will have <span>10 seconds</span> to answer each question, related to dance music</li>
+          <li class="instruction">You must answer 6 questions correctly to enter Berghain</li>
+          <li class="instruction">You have 2 lives, use them all and you're not getting in</li>
       </ul>
   </div>
 </div>
@@ -46,7 +46,7 @@ function buildCardHTML(card) {
   let prompt = `<h2>${card.question}</h2>`;
 
   const htmlAnswer = card.answers.reduce(function (html, answer) {
-    html += "<a class=answer>" + answer + "</a>";
+    html += `<a class="answer">` + answer + `</a>`;
     return html;
   }, "");
 
@@ -70,21 +70,33 @@ const buildDomGame = (cardHTML) => {
     </audio>`;
 
   //TIMER
-  /*let count = 10;
+  let count = 10;
   let interval = setInterval(function () {
     document.getElementById("timer").innerHTML = `${count}`;
     count--;
     if (count === -1) {
       //this lets it hit 0 then action the clearInterval
       clearInterval(interval);
-      document.getElementById("timer");
-      if (lifeCount > 0){ //want to get it to take a life if lives status is higher than 0 else, gameOver
-       takeLife();
-      } else {
-        buildGameOver()
+      {
+        //INCORRECT ANSWER LOGIC
+        main = document.querySelector("main");
+        main.innerHTML = `
+        
+        <audio  <audio controls autoplay>
+        <source src="audio/incorrect.mp3" type="audio/mpeg">
+      </audio>
+      <div class="incorrect-section">
+      <div class="incorrect-text">OUT OF TIME...you lost a life!</div><button id="next-button">NEXT QUESTION</button></div>`;
+
+        const nextBtn = document.getElementById("next-button");
+        nextBtn.addEventListener("click", buildGameScreen);
+        game.takeLife();
+        if (game.lives === 0) {
+          buildGameOver();
+        }
       }
     }
-  }, 1000);*/
+  }, 1000);
 };
 
 // Second Screen => Game Screen
@@ -120,7 +132,7 @@ const buildGameScreen = () => {
         main = document.querySelector("main");
         main.innerHTML = `
         <div class="winning-screen">
-        <h2>Welcome to Berghain, come in!</h2><br>
+        <h2 class="welcome-text">Welcome to Berghain, come in!</h2><br>
         <img src="images/giphy.gif" class="dancing-kid" alt="dancing-kid">
         <button id="otravez">PLAY AGAIN?</button></div>
         <audio  <audio controls autoplay>
@@ -154,13 +166,13 @@ function buildGameOver() {
   buildDom(`
   
 
-    
-    <h1>Game Over</h1>
-    <h3>Sorry, you'll just have to settle for a Döner tonight...</h3>
+  <section class="game-over">
+    <h1 class="game-over-text">Game Over</h1>
+    <h3 class="kebab-text">Sorry, you'll just have to settle for a Döner tonight...</h3>
     <img src="images/kebab-food.gif" class="kebab">
     
     <br><button id="otravez">PLAY AGAIN?</button>
-    <section class="game-over">
+    
     <audio  <audio controls autoplay>
   <source src="audio/GameOverAudio.mp3" type="audio/mpeg">
     

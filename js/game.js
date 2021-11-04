@@ -68,12 +68,12 @@ class Game {
     {
       question: "Barcelona is home to which of these famous techno DJs?",
       answers: [
-        "Dubfire, Maceo Plex, Marco Carola",
-        "Peggy Gou, Green Velvet, Sven Väth",
-        "ANNA, Adam Beyer, Chris Liebing",
-        "Ben Klock, Wehbba, Joseph Capriati",
+        "Adam Beyer",
+        "Sven Väth",
+        "ANNA",
+        "Joseph Capriati",
       ],
-      correctAnswer: "Dubfire, Maceo Plex, Marco Carola",
+      correctAnswer: "ANNA",
     },
     {
       question: "Who is often considered 'The Father of Techno'?",
