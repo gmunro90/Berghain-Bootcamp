@@ -8,10 +8,6 @@ const buildDom = (HTML) => {
 const buildSplashScreen = () => {
   buildDom(`
 
-  <audio controls autoplay>
-  <source src="audio/muffledqueue.mp3" type="audio/mpeg">
-  </audio>
-
 <div class="splash-screen">
 
   <h1>Berghain Bootcamp</h1>
@@ -28,8 +24,8 @@ const buildSplashScreen = () => {
   
       <ul>
           <li class="instruction">You will have <span>10 seconds</span> to answer each question related to dance music</li>
-          <li class="instruction">You must answer all 6 questions correctly to enter Berghain</li>
-          <li class="instruction">You have 2 lives, use them all and you're not getting in</li>
+          <li class="instruction">You must answer 6 questionscorrectly to enter Berghain</li>
+          <li class="instruction">You have <span>2 lives</span>, use them all and you're not getting in</li>
       </ul>
   </div>
 </div>
@@ -47,7 +43,7 @@ const buildSplashScreen = () => {
 
 //BRINGS NEW QUESTIONS + ANSWERS
 function buildCardHTML(card) {
-  let prompt = card.question;
+  let prompt = `<h2>${card.question}</h2>`;
 
   const htmlAnswer = card.answers.reduce(function (html, answer) {
     html += "<a class=answer>" + answer + "</a>";
@@ -63,12 +59,15 @@ const buildDomGame = (cardHTML) => {
   let main = document.querySelector("main");
   main.innerHTML =
     `<div class="score">
-    <p>Score: ${game.score} </p></div>` +
+    <p>Score: ${game.score} / 6 </p></div>` +
     `<p>lives: ${game.lives}</p>` +
     `<br><p>You have: <span id="timer">10</span> seconds remaining!</p>` +
     `<ol>` +
     cardHTML +
-    `</ol>`;
+    `</ol>` +
+    `<audio controls autoplay loop>
+    <source src="audio/muffledqueue.mp3" type="audio/mpeg">
+    </audio>`;
 
   //TIMER
   /*let count = 10;
@@ -117,8 +116,12 @@ const buildGameScreen = () => {
       if (game.score === 6) {
         main = document.querySelector("main");
         main.innerHTML = `
-        <img src="images/bcee3f84ac741cf2c35b60a5e4dfbf43.jpg" alt="berghain-logo">
-        WINNER<br><button id="otravez">PLAY AGAIN?</button>`;
+        <div class="winning-screen">
+        <h2>Welcome to Berghain, come in!</h2><br>
+        <img src="images/giphy.gif" class="dancing-kid" alt="dancing-kid">
+        <button id="otravez">PLAY AGAIN?</button></div>
+        <audio  <audio controls autoplay>
+        <source src="audio/Winner.mp3" type="audio/mpeg">`;
         const playAgainBtn = document.getElementById("otravez");
         playAgainBtn.addEventListener("click", buildGameScreen);
       }
@@ -127,7 +130,7 @@ const buildGameScreen = () => {
       main = document.querySelector("main");
       main.innerHTML = `
       <audio  <audio controls autoplay>
-      <source src="audio/button-10.mp3" type="audio/mpeg">
+      <source src="audio/incorrect.mp3" type="audio/mpeg">
     </audio>INCORRECT...you lost a life!<button id="next-button">NEXT QUESTION</button>`;
 
       const nextBtn = document.getElementById("next-button");
@@ -143,13 +146,17 @@ const buildGameScreen = () => {
 // Third Screen => Game Over
 function buildGameOver() {
   buildDom(`
+  
 
-    <section class="game-over">
-
+    
     <h1>Game Over</h1>
-    <h3>Sorry, you'll have to settle for just a Döner tonight...</h3>
+    <h3>Sorry, you'll just have to settle for a Döner tonight...</h3>
+    <img src="images/kebab-food.gif" class="kebab">
     
     <br><button id="otravez">PLAY AGAIN?</button>
+    <section class="game-over">
+    <audio  <audio controls autoplay>
+  <source src="audio/GameOverAudio.mp3" type="audio/mpeg">
     
     </section>
 

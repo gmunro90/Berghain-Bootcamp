@@ -70,8 +70,8 @@ class Game {
       answers: [
         "Dubfire, Maceo Plex, Marco Carola",
         "Peggy Gou, Green Velvet, Sven Väth",
-        "Deborah de Luca, Adam Beyer, Chris Liebing",
-        "Ben Klock, Marco Carola, Joseph Capriati",
+        "ANNA, Adam Beyer, Chris Liebing",
+        "Ben Klock, Wehbba, Joseph Capriati",
       ],
       correctAnswer: "Dubfire, Maceo Plex, Marco Carola",
     },
