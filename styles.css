@@ -3,6 +3,7 @@
   margin: 0;
 }
 
+
 .splash-screen {
   display: flex;
   justify-content: center;
@@ -15,6 +16,10 @@ h1 {
   font-size: 60px;
 }
 
+audio {
+  display: none;
+}
+
 .prove {
   font-size: 20px;
   font-weight: 900;
@@ -22,6 +27,7 @@ h1 {
 
 body {
   background-image: url("images/berghain.jpeg");
+  background-repeat: repeat;
   color: whitesmoke;
 }
 

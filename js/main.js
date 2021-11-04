@@ -1,5 +1,54 @@
-let game;
+let game; //initiates game
 
+//builds general DOM to be updated dynamically
+const buildDom = (HTML) => {
+  let main = document.querySelector("main");
+  main.innerHTML = HTML;
+};
+
+// First Screen => Splash Screen
+const buildSplashScreen = () => {
+  buildDom(`
+
+  <audio controls autoplay>
+  <source src="audio/muffledqueue.mp3" type="audio/mpeg">
+  </audio>
+
+<div class="splash-screen">
+
+  <h1>Berghain Bootcamp</h1>
+  
+      
+  <h2 class="prove">Prove your techno music knowledge and earn the right to enter Berghain!</h2>
+  <img src="images/imageedit_13_8878481949.png" class="berglogo" alt="berghain-logo">
+  
+  <button id="start-button">Start</button>
+  
+  <div class="rules">
+  <h2 class="rules-title">Rules</h2><br>
+  <div class="rules-list">
+  
+      <ul>
+          <li class="instruction">You will have <span>10 seconds</span> to answer each question related to dance music</li>
+          <li class="instruction">You must answer all 6 questions correctly to enter Berghain</li>
+          <li class="instruction">You have 2 lives, use them all and you're not getting in</li>
+      </ul>
+  </div>
+</div>
+    
+
+</header>
+  
+    
+`);
+
+//START BUTTON
+const startButton = document.getElementById("start-button");
+startButton.addEventListener("click", buildGameScreen);
+
+};
+
+//BRINGS NEW QUESTIONS + ANSWERS
 function buildCardHTML(card) {
   let prompt = card.question;
 
@@ -8,10 +57,10 @@ function buildCardHTML(card) {
     return html;
   }, "");
 
-  return `${prompt}` + htmlAnswer; //why not have this in backtick string too?
+  return `${prompt}` + htmlAnswer;
 }
 
-// General function that will update the HTML content dynamically
+//Builds scores, lives + timer when game screen loaded
 const buildDomGame = (cardHTML) => {
   //here you can affect the visuals and html of the game screen
   let main = document.querySelector("main");
@@ -25,7 +74,7 @@ const buildDomGame = (cardHTML) => {
     `</ol>`;
 
   //TIMER
-  let count = 10;
+  /*let count = 10;
   let interval = setInterval(function () {
     document.getElementById("timer").innerHTML = `${count}`;
     count--;
@@ -33,86 +82,59 @@ const buildDomGame = (cardHTML) => {
       //this lets it hit 0 then action the clearInterval
       clearInterval(interval);
       document.getElementById("timer");
-      /*if (lifeCount > 0){ //want to get it to take a life if lives status is higher than 0 else, gameOver
+      if (lifeCount > 0){ //want to get it to take a life if lives status is higher than 0 else, gameOver
        takeLife();
       } else {
         buildGameOver()
-      }*/
+      }
     }
-  }, 1000);
+  }, 1000);*/
 };
 
-const buildDom = (HTML) => {
-  let main = document.querySelector("main");
-  main.innerHTML = HTML;
-};
 
-// First Screen => Splash Screen
-const buildSplashScreen = () => {
-  buildDom(`
-    <div class="splash-screen">
-      <h1>Berghain Bootcamp</h1>
-      <h2 class="prove">Prove your techno music knowledge and earn the right to enter Berghain!</h2>
-      <img src="images/imageedit_13_8878481949.png" class="berglogo" alt="berghain-logo">
-      
-      <button id="start-button">Start</button>
-      
-      <div class="rules">
-      <h2 class="rules-title">Rules</h2><br>
-      <div class="rules-list">
-      
-          <ul>
-              <li class="instruction">You will have <span>10 seconds</span> to answer each question related to dance music</li>
-              <li class="instruction">You must answer all 6 questions correctly to enter Berghain</li>
-              <li class="instruction">You have 2 lives, use them all and you're not getting in</li>
-          </ul>
-      </div>
-    </div>
-    `);
-
-  const startButton = document.getElementById("start-button");
-  startButton.addEventListener("click", buildGameScreen);
-};
 
 // Second Screen => Game Screen
-
 const buildGameScreen = () => {
   //logic of the game screen + affect html dependant on actions
-  game = new Game();
+  game = new Game();//brings the game class and builds the elements needed
 
-  const card = game.getRandomCard();
-  const cardHTML = buildCardHTML(card);
+  const card = game.getRandomCard(); //gets a question from shuffled deck
+  const cardHTML = buildCardHTML(card); //builds the html of the questions
 
   buildDomGame(cardHTML);
 
-  let choices = document.querySelector("ol");
+  let choices = document.querySelector("ol");//logic of choices, correct or incorrect...
   choices.addEventListener("click", function (event) {
     //let correct = false
-    if (event.target.innerText === card.correctAnswer) {
+    if (event.target.innerText === card.correctAnswer) {  
+        // CORRECT ANSWER LOGIC
       main = document.querySelector("main");
-      main.innerHTML =
-        `CORRECT` +
-        `<br><br><button id="next-button">` +
-        `NEXT QUESTION` +
-        `</button>`;
+      main.innerHTML =`
+      <audio  <audio controls autoplay>
+      <source src="audio/correct.mp3" type="audio/mpeg">
+    </audio>CORRECT!<button id="next-button">NEXT QUESTION</button>`
 
       const nextBtn = document.getElementById("next-button");
       nextBtn.addEventListener("click", buildGameScreen);
-      game.scoreUp(); //adding points
+      game.scoreUp();//adding points
+
       //if above === reaches 6, build WINNER html
-      if (game.score === 2) {
-        // CORRECT ANSWER LOGIC
-        //console.log('youWIN')
+      if (game.score === 6) {
+
         main = document.querySelector("main");
-        main.innerHTML =
-          `WINNER` + `<br><button id="otravez">PLAY AGAIN?</button>`;
+        main.innerHTML =`
+        <img src="images/bcee3f84ac741cf2c35b60a5e4dfbf43.jpg" alt="berghain-logo">
+        WINNER<br><button id="otravez">PLAY AGAIN?</button>`;
         const playAgainBtn = document.getElementById("otravez");
         playAgainBtn.addEventListener("click", buildGameScreen);
       }
     } else {
       //INCORRECT ANSWER LOGIC
       main = document.querySelector("main");
-      main.innerHTML = `INCORRECT...you lost a life!<br><br><button id="next-button">NEXT QUESTION</button>`;
+      main.innerHTML = `
+      <audio  <audio controls autoplay>
+      <source src="audio/button-10.mp3" type="audio/mpeg">
+    </audio>INCORRECT...you lost a life!<button id="next-button">NEXT QUESTION</button>`;
 
       const nextBtn = document.getElementById("next-button");
       nextBtn.addEventListener("click", buildGameScreen);
