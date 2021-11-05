@@ -29,6 +29,7 @@ body {
   background-image: url("images/berghain.jpeg");
   background-repeat: repeat;
   color: whitesmoke;
+  background-size: 100%;
 }
 
 .berglogo {
