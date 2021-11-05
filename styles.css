@@ -151,7 +151,6 @@ a:hover {
   text-align: center;
 }
 
-
 ol {
   display: flex;
   flex-direction: column;
@@ -182,6 +181,27 @@ ol {
 
 .game-over-text {
   font-size: 70px;
+}
+
+.game-over-text {
+  animation: blinking 1.2s infinite;
+}
+@keyframes blinking {
+  0% {
+    color: red;
+  }
+  47% {
+    color: #000;
+  }
+  62% {
+    color: transparent;
+  }
+  97% {
+    color: transparent;
+  }
+  100% {
+    color: #000;
+  }
 }
 
 img.kebab {

@@ -1,39 +1,35 @@
 "use strict"; //what is this?
 class Game {
   constructor() {
-    this.score = 0; 
+    this.score = 0;
     this.lives = 2;
     this.questions = [...this.myCards];
     this.answeredQst = [];
     this.count = 0;
-  };
+  }
 
   getRandomCard() {
-    //eventually will return RANDOM q, not first index
     let currentQIndx = Math.floor(Math.random() * this.questions.length);
     let currentQst = this.questions[currentQIndx];
     this.answeredQst.push(currentQst);
     this.questions.splice(currentQIndx, 1);
 
-    console.log("question number", this.questions);
-    console.log("answered qst", this.answeredQst);
-
     return currentQst;
-  };
+  }
 
   scoreUp() {
     this.score += 1;
-  };
+  }
 
   takeLife() {
     this.lives -= 1;
-  };
+  }
 
   myCards = [
     {
       question: "Where was Techno music first pioneered?",
       answers: ["Ibiza, Spain", "New York, USA", "London, UK", "Detroit, USA"],
-      correctAnswer: "Detroit, USA", // also can gove the index of the correct answer
+      correctAnswer: "Detroit, USA",
     },
 
     {
@@ -59,12 +55,7 @@ class Game {
     },
     {
       question: "Barcelona is home to which of these famous techno DJs?",
-      answers: [
-        "Adam Beyer",
-        "Sven Väth",
-        "ANNA",
-        "Joseph Capriati",
-      ],
+      answers: ["Adam Beyer", "Sven Väth", "ANNA", "Joseph Capriati"],
       correctAnswer: "ANNA",
     },
     {
@@ -94,4 +85,4 @@ class Game {
       correctAnswer: "Ben Klock",
     },
   ];
-};
+}
