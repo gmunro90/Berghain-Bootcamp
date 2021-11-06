@@ -55,8 +55,8 @@ class Game {
     },
     {
       question: "Barcelona is home to which of these famous techno DJs?",
-      answers: ["Adam Beyer", "Sven Väth", "ANNA", "Joseph Capriati"],
-      correctAnswer: "ANNA",
+      answers: ["Adam Beyer", "Sven Väth", "Dubfire", "Joseph Capriati"],
+      correctAnswer: "Dubfire",
     },
     {
       question: "Who is often considered 'The Father of Techno'?",
