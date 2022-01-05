@@ -35,7 +35,7 @@ My methods are quite simple, since the game structure is not too demanding. I ha
 ### Git
 
 [Link Repo](https://github.com/gmunro90/project1)
-[Link Deploy](https://gmunro90.github.io/project1/)
+[Link Deploy](https://gmunro90.github.io/Berghain-Bootcamp/)
 
 ### Slides
 
