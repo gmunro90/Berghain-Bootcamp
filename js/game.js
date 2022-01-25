@@ -1,4 +1,4 @@
-"use strict"; //what is this?
+"use strict";
 class Game {
   constructor() {
     this.score = 0;
