@@ -1,7 +1,5 @@
 # Berghain Bootcamp
 
-## Description
-
 This is a browser based quiz game that requires the user to answer 6 correct questions relating to techno music and dance culture. The questions are randomised, and the user has 2 lives. If all lives are used up by answering questions incorrectly, it's game over.
 
 The game is based on entering the infamous Berlin nightclub 'Berghain' which is notoriously difficult to get in, as the security on the door ask clients questions relating to the event inside, in order to filter their clientele.
