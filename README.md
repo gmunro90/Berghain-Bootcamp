@@ -30,9 +30,6 @@ My methods are quite simple, since the game structure is not too demanding. I ha
 
 - winScreen generates when the player reaches 6 correctly answered questions (without their lives reaching 0). This screen generates audio (actual audio from inside Berghain) to let the user know they have successfully gained access and it's time to party!
 
-### Git
-
-[Repo](https://github.com/gmunro90/project1)
 [Deploy](https://gmunro90.github.io/Berghain-Bootcamp/)
 
 ### Slides
