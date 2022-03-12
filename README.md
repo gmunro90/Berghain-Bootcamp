@@ -32,9 +32,9 @@ My methods are quite simple, since the game structure is not too demanding. I ha
 
 ### Git
 
-[Link Repo](https://github.com/gmunro90/project1)
-[Link Deploy](https://gmunro90.github.io/Berghain-Bootcamp/)
+[Repo](https://github.com/gmunro90/project1)
+[Deploy](https://gmunro90.github.io/Berghain-Bootcamp/)
 
 ### Slides
 
-[Link Slides.com](https://tinyurl.com/tfvwp4c8)
+[Slides.com](https://tinyurl.com/tfvwp4c8)
